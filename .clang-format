@@ -1,0 +1,119 @@
+# .clang-format
+# clang 排版配置文件
+#
+# * 配置参数修改参考文档
+#   http://clang.llvm.org/docs/ClangFormatStyleOptions.html
+#
+# * 使用步骤：
+#   配置快捷键，如有必要可设置保存文件时自动格式化
+#   将次文件放入工程目录下，命名为 .clang-format
+#
+#
+# * 若有不支持的排版，使用以下注释让 clang 跳过排版
+#   // clang-format off
+#   ... ...
+#   // clang-format on
+#
+#
+# * 空行使用注意，大的区块之间用三个空行分离
+#   方法内的不同功能块视情况使用一个空行或两个空行分离（有两个分行时应考虑将方法重构分离为两个方法）
+#   @interface, @implementation, @protocal, @end 前后用一个空行分离
+#
+
+---
+# 格式化风格选择，基于LLVM修改个性设置，不用设置太多参数，根据自己喜好选择其他风格
+BasedOnStyle: LLVM
+
+# Tab 宽度                     
+TabWidth: 4 
+
+---
+# 针对语言修改风格
+Language: Cpp
+
+# 控制 @public ... 的左缩进，以 IndentWidth 为基准
+AccessModifierOffset: -2  
+
+# 对齐括号内参数                           
+AlignAfterOpenBracket: Align    
+
+# 对齐连续多行赋值的操作数                        
+AlignConsecutiveAssignments: false   
+
+# 对齐换行符'\'                    
+AlignEscapedNewlines: Right            
+
+# 水平对齐二元操作符操作数                 
+AlignOperands: true            
+
+# 行尾注释对齐                         
+AlignTrailingComments: true  
+
+# true允许方法声明的参数完全另起一行                           
+AllowAllParametersOfDeclarationOnNextLine: true 
+
+# 允许 blocks 单行        
+AllowShortBlocksOnASingleLine: false             
+
+# 允许 case 单行       
+AllowShortCaseLabelsOnASingleLine: false    
+
+# 允许方法单行 int f() { return 0; }            
+AllowShortFunctionsOnASingleLine: Empty    
+
+# if 语句较短时允许单行             
+AllowShortIfStatementsOnASingleLine: false       
+       
+AllowShortLoopsOnASingleLine: false          
+
+# false 时表示 c 方法调用强制一行或按参数多行           
+BinPackArguments: false      
+
+# false 时表示 c 方法声明强制一行或按参数多行                           
+BinPackParameters: false            
+
+# 二元运算符换行风格，NonAssignment在非赋值操作符前换行                    
+BreakBeforeBinaryOperators: NonAssignment         
+
+# 大括号换行风格，使用默认      
+BreakBeforeBraces: Attach  
+
+# 三元操作符在换行后放置                        
+BreakBeforeTernaryOperators: true     
+
+# 单行最长字符限制，0不限制                  
+ColumnLimit: 120         
+
+# switch case 的 case 进行缩进                                
+IndentCaseLabels: true       
+
+# 默认行缩进量                           
+IndentWidth: 4              
+
+# 如果函数声明或者定义换行设置缩进                            
+IndentWrappedFunctionNames: true      
+
+# block 开头的空行是否保留                  
+KeepEmptyLinesAtTheStartOfBlocks: false  
+
+# 最多允许几个空行               
+MaxEmptyLinesToKeep: 1      
+
+# 对头文件进行排序                            
+SortIncludes: true     
+
+# 什么时候在括号前插入                                 
+SpaceBeforeParens: ControlStatements    
+
+# 行尾注释添加几个空格 //                
+SpacesBeforeTrailingComments: 5   
+
+# c 式类型强转之后是否添加空格                      
+SpacesInCStyleCastParentheses: false       
+
+# 语言标准 Cpp03 Cpp11 Auto             
+Standard: Cpp11                                  
+
+# 保留 Tab 或者用空格替换                              
+UseTab: Never                                           
+
